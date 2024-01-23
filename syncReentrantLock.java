@@ -4,7 +4,7 @@ import java.util.concurrent.locks.Lock;
 public class syncReentrantLock implements Counter {
     int count = 0;
     private final Lock reentrantLock = new ReentrantLock();
-    public synchronized void incrementCounter() {
+    public void incrementCounter() {
         //count++;
         reentrantLock.lock();
         count++;
