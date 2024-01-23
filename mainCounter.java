@@ -97,24 +97,23 @@ public class mainCounter {
             System.out.println("Selected syncCounter");
             return new syncCounter();
         }
-        /*
+
         else if (counterSelect == 3) {
             System.out.println("Selected syncSemaphore");
-            return new syncCounter();
+            return new syncSemaphoreCounter();
         }
         else if (counterSelect == 4) {
             System.out.println("Selected syncReentrantLock");
-            return new syncCounter();
+            return new syncReentrantLock();
         }
         else if (counterSelect == 5) {
             System.out.println("Selected syncReentrantReadWriteLock");
-            return new syncCounter();
+            return new syncReentrantReadWriteLock();
         }
         else if (counterSelect == 6) {
             System.out.println("Selected AtomicInteger");
-            return new syncCounter();
+            return new syncAtomicIntegerCounter();
         }
-        */
         else {
             System.out.println("That selection does not exist");
             return null;
