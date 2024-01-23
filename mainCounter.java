@@ -28,15 +28,18 @@ public class mainCounter {
         System.out.println("Enter size of counter");
         int counterSize = scanner.nextInt();
 
+        System.out.println("Enter method test type. (Options are 1. Increment 2. Set 3. Get 4. All");
+        int testType = scanner.nextInt();
+
         Counter counter = selectCounter(counterNumber);
-        testCounter(counter, threadNumber, counterSize);
+        testCounter(counter, threadNumber, counterSize, testType);
     }
 
-    private static void testCounter(Counter counter, int threadNumber, int counterSize) {
+    private static void testCounter(Counter counter, int threadNumber, int counterSize, int testType) {
         Stopwatch stopwatch = new Stopwatch();
         List<myThread> threads = new LinkedList<>();
         for (int i = 0; i < threadNumber; i++) {
-            myThread thread = new myThread(counter, counterSize);
+            myThread thread = new myThread(counter, counterSize, testType);
             thread.start();
             threads.add(thread);
         }
@@ -59,27 +62,35 @@ public class mainCounter {
     private static class myThread extends Thread {
         private final Counter counter; //Counter type
         private final int size; //Size
+        private final int testType; //Type of test
 
         //Constructor
-        public myThread(Counter counter, int operations) {
+        public myThread(Counter counter, int operations, int testType) {
             this.counter = counter;
             this.size = operations;
+            this.testType = testType;
         }
 
         //Run method, generates random number between 0 and 2 and tests each case
         @Override
         public void run() {
-            Random random = new Random();
+            //Random random = new Random();
             for (int i = 0; i < size; i++) {
-                int number = random.nextInt(3);
-                if (number == 0) {
+                //int number = random.nextInt(3);
+
+                if (testType == 1) {
                     counter.incrementCounter();
                 }
-                else if (number == 1) {
+                else if (testType == 2) {
                     counter.setCounter(10);
                     System.out.println("Setting to 10");
                 }
-                else if (number == 2) {
+                else if (testType == 3) {
+                    counter.getCounter();
+                }
+                else if(testType == 4) {
+                    counter.incrementCounter();
+                    counter.setCounter(10);
                     counter.getCounter();
                 }
             }
@@ -97,7 +108,6 @@ public class mainCounter {
             System.out.println("Selected syncCounter");
             return new syncCounter();
         }
-
         else if (counterSelect == 3) {
             System.out.println("Selected syncSemaphore");
             return new syncSemaphoreCounter();
