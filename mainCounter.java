@@ -56,7 +56,7 @@ public class mainCounter {
 
         double timeElapsed = stopwatch.elapsedTime();
         System.out.println("Time: " + timeElapsed);
-        System.out.println("Value: " + counter.getCounter());
+        //System.out.println("Value: " + counter.getCounter());
 
     }
 
