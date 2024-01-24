@@ -22,11 +22,12 @@ public class mainCounter {
                 " 5. ReentrantReadWriteLock 6. Atomic Integer Counter");
         int counterNumber = scanner.nextInt();
 
-        System.out.println("Enter number of threads");
-        int threadNumber = scanner.nextInt();
+        //System.out.println("Enter number of threads");
+        int threadNumber = Runtime.getRuntime().availableProcessors(); //optimal amount of threads in system
 
-        System.out.println("Enter size of counter");
-        int counterSize = scanner.nextInt();
+        //System.out.println("Enter size of counter");
+        int counterSize = 1000000; //1 Mil for big counter size
+        System.out.println("Using counter size 1,000,000");
 
         System.out.println("Enter method test type. (Options are 1. Increment 2. Set 3. Get 4. All");
         int testType = scanner.nextInt();
