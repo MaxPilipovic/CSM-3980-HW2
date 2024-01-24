@@ -23,6 +23,7 @@ public class mainCounter {
         int counterNumber = scanner.nextInt();
 
         //System.out.println("Enter number of threads");
+        System.out.println("Using: " + Runtime.getRuntime().availableProcessors() + " Cores");
         int threadNumber = Runtime.getRuntime().availableProcessors(); //optimal amount of threads in system
 
         //System.out.println("Enter size of counter");
