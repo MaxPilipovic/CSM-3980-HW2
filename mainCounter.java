@@ -56,7 +56,7 @@ public class mainCounter {
 
         double timeElapsed = stopwatch.elapsedTime();
         System.out.println("Time: " + timeElapsed);
-        //System.out.println("Value: " + counter.getCounter());
+        System.out.println("Value: " + counter.getCounter());
 
     }
 
@@ -85,7 +85,7 @@ public class mainCounter {
                 }
                 else if (testType == 2) {
                     counter.setCounter(10);
-                    System.out.println("Setting to 10");
+                    //System.out.println("Setting to 10");
                 }
                 else if (testType == 3) {
                     counter.getCounter();
