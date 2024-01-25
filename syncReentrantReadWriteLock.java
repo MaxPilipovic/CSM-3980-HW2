@@ -3,7 +3,7 @@ import java.util.concurrent.locks.Lock;
 
 public class syncReentrantReadWriteLock implements Counter {
     int count = 0;
-    private final ReentrantReadWriteLock reentrantReadWriteLock = new ReentrantReadWriteLock();
+    private final ReentrantReadWriteLock reentrantReadWriteLock = new ReentrantReadWriteLock(true);
     public void incrementCounter() {
         reentrantReadWriteLock.writeLock().lock(); //write lock (unlock)
         count++;
