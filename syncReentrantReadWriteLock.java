@@ -1,5 +1,4 @@
 import java.util.concurrent.locks.ReentrantReadWriteLock;
-import java.util.concurrent.locks.Lock;
 
 public class syncReentrantReadWriteLock implements Counter {
     int count = 0;
