@@ -67,16 +67,16 @@ public class mainCounter {
         private final int testType; //Type of test
 
         //Constructor
-        public myThread(Counter counter, int operations, int testType) {
+        public myThread(Counter counter, int size, int testType) {
             this.counter = counter;
-            this.size = operations;
+            this.size = size;
             this.testType = testType;
         }
 
         //Run method, generates random number between 0 and 2 and tests each case
         @Override
         public void run() {
-            //Random random = new Random();
+            Random random = new Random();
             for (int i = 0; i < size; i++) {
                 //int number = random.nextInt(3);
 
@@ -91,15 +91,24 @@ public class mainCounter {
                     counter.getCounter();
                 }
                 else if(testType == 4) {
-                    counter.incrementCounter();
-                    counter.setCounter(10);
-                    counter.getCounter();
+                    int randomvalue = random.nextInt(3) + 1;
+                    switch (randomvalue) {
+                        case 1:
+                            counter.incrementCounter();
+                            break;
+
+                        case 2:
+                            counter.setCounter(10);
+                            break;
+                        case 3:
+                            counter.getCounter();
+                            break;
+                    }
                 }
             }
         }
 
     }
-
     //Select method
     private static Counter selectCounter(int counterSelect) {
         if (counterSelect == 1) {
