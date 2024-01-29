@@ -4,12 +4,9 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class mainCounter {
-    private static final int minThread = 1;
-    private static final int maxThread = 12; //1 to 2c. where c is number of cores //6 cores on my pc
-    private static final int minSize = 1;
-    private static final int maxSize = 999999;
-    private static final int counterMinimum = 1;
-    private static final int counterMaximum = 6;
+    private static final int Min= 1;
+    private static final int Max = 12; //1 to 2c. where c is number of cores //6 cores on my pc
+
 
     //Decided to do no error handling
 
