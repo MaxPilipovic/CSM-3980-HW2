@@ -46,6 +46,7 @@ public class mainCounter {
             threads.add(thread);
         }
 
+        //Join threads
         for (int i = 0; i < threads.size(); i++) { //Loop to wait for each thread to finish and begin next
             try {
                 threads.get(i).join();
